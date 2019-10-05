@@ -1,11 +1,12 @@
 <h1>My Documents</h1>
 
-<ul>
-
 <% @docs.each do |doc| %>
-<li><%= link_to doc.title, doc_path(doc) %> - <%= time_ago_in_words(doc.created_at) %> - <%= truncate(doc.content, length: 50) %></li>
+<h2><%= link_to doc.title, doc_path(doc) %></h2>
+<%= time_ago_in_words(doc.created_at) %><br>
+<%= truncate(doc.content, length: 50) %><br>
 <% end %>
+<br>
 
-</ul>
+
 
 <%= link_to "Create Document", new_doc_path %>
